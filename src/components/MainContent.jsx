@@ -32,9 +32,13 @@ const MainContent = () => {
   };
 
   useEffect(() => {
-    if (filelist.length > 0) {
-      handleImages(filelist);
-    }
+    const debounceTimeout = setTimeout(() => {
+      if (filelist.length > 0) {
+        handleImages(filelist);
+      }
+    }, 300); // 300ms debounce
+
+    return () => clearTimeout(debounceTimeout);
   }, [value, filelist]);
 
   const handleImages = async (files) => {
