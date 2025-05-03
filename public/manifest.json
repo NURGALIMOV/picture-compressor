@@ -1,38 +1,37 @@
 {
-  "short_name": "Image Compressor",
+  "manifest_version": 3,
   "name": "Image Compressor",
-  "icons": [
+  "short_name": "Image Compressor",
+  "version": "1.0.0",
+  "description": "A tool to compress images efficiently.",
+  "icons": {
+    "48": "logo48.svg",
+    "128": "logo.png",
+    "180": "logo180.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "logo48.svg"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
     {
-      "src": "logo180.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo48.svg",
-      "sizes": "48x48",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.svg",
-      "type": "image/svg",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo.svg",
-      "type": "image/svg",
-      "sizes": "512x512",
-      "purpose": "maskable"
-    },
-    {
-      "src": "logo.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable"
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "web_accessible_resources": [
+    {
+      "resources": ["logo.svg", "logo.png", "logo180.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

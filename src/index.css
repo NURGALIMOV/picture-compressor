@@ -10,6 +10,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 512px;
+  height: 246px;
 }
 
 .range::-webkit-slider-thumb {

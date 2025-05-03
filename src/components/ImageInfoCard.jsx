@@ -2,6 +2,7 @@ import React from "react";
 import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { formatFileSize } from "../../util/util";
+
 const ImageInfoCard = ({ handleSingleDownload, ...props }) => {
   return (
     <div className="flex bg-white rounded-lg shadow hover:shadow-md overflow-hidden">

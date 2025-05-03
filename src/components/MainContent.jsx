@@ -3,7 +3,6 @@ import JSZip from "jszip";
 import React, { useEffect, useState } from "react";
 import { PhotoProvider } from "react-photo-view";
 import ImageInfoCard from "./ImageInfoCard";
-import Intro from "./Intro";
 import LoadingSpinner from "./LoadingSpinner";
 import ProgressBar from "./ProgressBar";
 import QualitySlider from "./QualitySlider";
@@ -139,7 +138,6 @@ const MainContent = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <Intro />
       <QualitySlider
         value={value}
         handleRangeChange={handleRangeChange}
