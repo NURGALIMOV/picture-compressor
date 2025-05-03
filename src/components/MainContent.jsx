@@ -136,13 +136,18 @@ const MainContent = () => {
     document.body.removeChild(downloadLink);
   };
 
+  const handleDelete = (index) => {
+    setCompressedImages((compressedImages) =>
+      compressedImages.filter((_, i) => i !== index)
+    );
+    setFilelist((filelist) =>
+      Array.from(filelist).filter((_, i) => i !== index)
+    );
+  };
+
   return (
     <div className="container mx-auto px-4">
-      <QualitySlider
-        value={value}
-        handleRangeChange={handleRangeChange}
-        setValue={setValue}
-      />
+      <QualitySlider value={value} handleRangeChange={handleRangeChange} />
       <div className="">
         <label
           className={`flex justify-center items-center cursor-pointer h-30 md:40 border-2 border-dashed rounded-lg
@@ -171,16 +176,19 @@ const MainContent = () => {
                 d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
               />
             </svg>
-
             <p
               className={`md:text-lg  ${
                 isDragActive ? "text-gray-700" : "text-gray-500"
               } `}
             >
               <span className="font-semibold">Click to upload</span> or drag and
-              drop multiple images
+              drop multiple images.
             </p>
-            <p className="text-gray-500">jpg, jpeg, png, webp</p>
+
+            <p>
+              Supported formats:{" "}
+              <span className="text-gray-500">JPG, JPEG, PNG, WEBP.</span>
+            </p>
             <p className="text-[#ff4d4f] text-sm">
               **png formatted image need to be larger than 120kb
             </p>
@@ -195,7 +203,7 @@ const MainContent = () => {
             id="file-input"
           />
         </label>
-        <div className="mt-4 flex justify-end">
+        <div className="mt-4 flex justify-end ">
           {compressedImages?.length > 0 && (
             <div className="mr-2">
               <button
@@ -263,11 +271,12 @@ const MainContent = () => {
           <>
             <PhotoProvider>
               {compressedImages?.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+                <div className="flex flex-col gap-1 py-4">
                   {compressedImages?.map((image, i) => (
                     <ImageInfoCard
                       key={i}
                       handleSingleDownload={handleSingleDownload}
+                      handleDelete={() => handleDelete(i)}
                       {...image}
                     />
                   ))}

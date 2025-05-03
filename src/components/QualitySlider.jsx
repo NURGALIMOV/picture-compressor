@@ -1,19 +1,29 @@
 import React from "react";
 
-const QualitySlider = ({ value, setValue, handleRangeChange }) => {
+const QualitySlider = ({ value, handleRangeChange }) => {
+  const intervals = [
+    { value: 0, color: "#ff4d4f", label: "Not Recommended" },
+    { value: 0.2, color: "#fadb14", label: "Modarate" },
+    { value: 0.4, color: "#fadb14", label: "Modarate" },
+    { value: 0.6, color: "#0fdd23", label: "Recommended" },
+    { value: 0.8, color: "#0fdd23", label: "Recommended" },
+    { value: 1, color: "#ff4d4f", label: "Not Recommended" },
+  ];
+
+  const currentInterval = intervals.reduce((prev, curr) => {
+    return Math.abs(curr.value - value / 100) <
+      Math.abs(prev.value - value / 100)
+      ? curr
+      : prev;
+  });
+
   return (
     <div>
       <label className="md:text-lg md:font-semibold font-medium">
         Image Quality: {value / 100}{" "}
-        {value / 100 == 0 ? (
-          <span className="text-[#ff4d4f]">(Not Recommended)</span>
-        ) : value / 100 == 0.2 || value / 100 == 0.4 ? (
-          <span className="text-[#fadb14]">(Modarate)</span>
-        ) : value / 100 == 0.6 || value / 100 == 0.8 ? (
-          <span className="text-[#0fdd23]">(Recommended)</span>
-        ) : (
-          <span className="text-[#ff4d4f]">(Not Recommended)</span>
-        )}
+        <span className={`text-[${currentInterval.color}]`}>
+          ({currentInterval.label})
+        </span>
       </label>
       <div className="relative mb-6 -mt-1.5">
         <input
@@ -22,7 +32,6 @@ const QualitySlider = ({ value, setValue, handleRangeChange }) => {
           value={value}
           min={0}
           max={100}
-          step={20}
           onChange={handleRangeChange}
         />
         <span className="text-sm text-[#ff4d4f] absolute start-0 -bottom-5">

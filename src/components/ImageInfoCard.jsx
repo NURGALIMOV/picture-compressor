@@ -3,9 +3,9 @@ import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { formatFileSize } from "../../util/util";
 
-const ImageInfoCard = ({ handleSingleDownload, ...props }) => {
+const ImageInfoCard = ({ handleSingleDownload, handleDelete, ...props }) => {
   return (
-    <div className="flex bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+    <div className="flex bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md overflow-hidden">
       <div className="relative inline-block cursor-pointer">
         <PhotoView src={props?.content}>
           <div>
@@ -41,7 +41,7 @@ const ImageInfoCard = ({ handleSingleDownload, ...props }) => {
 
       <div className="flex-1 px-2 py-1">
         <h1 className="line-clamp-1 text-base md:text-lg font-semibold">
-          {props?.fileName}
+          <span>{props?.fileName}</span>
         </h1>
         <span className="text-xs md:text-sm text-gray-500 flex items-center">
           <span className="text-[#ff4d4f]">
@@ -84,6 +84,25 @@ const ImageInfoCard = ({ handleSingleDownload, ...props }) => {
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
           <span className="text-sm mt-1">Download</span>
+        </button>
+        <button
+          onClick={handleDelete}
+          className="rounded-md bg-[#ff4d4f] hover:bg-[#ff4d4f]/80 text-white px-2 inline-flex items-center mt-2 ml-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="mr-1 size-[14px]"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6m5 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span className="text-sm mt-1">Delete</span>
         </button>
       </div>
     </div>
