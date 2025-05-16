@@ -1,6 +1,6 @@
 import Compressor from "compressorjs";
 import JSZip from "jszip";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PhotoProvider } from "react-photo-view";
 import ImageInfoCard from "./ImageInfoCard";
 import LoadingSpinner from "./LoadingSpinner";
@@ -130,11 +130,8 @@ const MainContent = () => {
 
   const handleSingleDownload = (file) => {
     const downloadLink = document.createElement("a");
-    downloadLink.href = file;
-    var regexResult = /^data:(.+?)(?:;(?:.+?))?,/.exec(file);
-    var contentType = regexResult[1];
-    var extension = contentType.split("/")[1];
-    downloadLink.download = `compressed_image.${extension}`;
+    downloadLink.href = file.content;
+    downloadLink.download = file.fileName;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -261,7 +258,7 @@ const MainContent = () => {
             </button>
           )}
         </div>
-        {compressProgress > 0 && (
+        {compressProgress > 0 && compressProgress < 100 && (
           <div className="pt-2">
             <ProgressBar width={compressProgress} />
           </div>
@@ -279,7 +276,7 @@ const MainContent = () => {
                   {compressedImages?.map((image, i) => (
                     <ImageInfoCard
                       key={i}
-                      handleSingleDownload={handleSingleDownload}
+                      handleSingleDownload={() => handleSingleDownload(image)}
                       handleDelete={() => handleDelete(i)}
                       {...image}
                     />

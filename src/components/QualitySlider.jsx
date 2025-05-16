@@ -7,7 +7,7 @@ const QualitySlider = ({ value, handleRangeChange }) => {
     { value: 0.4, color: "#fadb14", label: "Modarate" },
     { value: 0.6, color: "#0fdd23", label: "Recommended" },
     { value: 0.8, color: "#0fdd23", label: "Recommended" },
-    { value: 1, color: "#ff4d4f", label: "Not Recommended" },
+    { value: 1, color: "#fadb14", label: "Modarate" },
   ];
 
   const currentInterval = intervals.reduce((prev, curr) => {
@@ -30,8 +30,8 @@ const QualitySlider = ({ value, handleRangeChange }) => {
           type="range"
           className="range w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer range-sm"
           value={value}
-          min={0}
-          max={100}
+          min={1}
+          max={99}
           onChange={handleRangeChange}
         />
         <span className="text-sm text-[#ff4d4f] absolute start-0 -bottom-5">
@@ -49,7 +49,7 @@ const QualitySlider = ({ value, handleRangeChange }) => {
         <span className="text-sm text-[#0fdd23] absolute start-[80%] -translate-x-1/2 -bottom-5">
           0.8
         </span>
-        <span className="text-sm text-[#ff4d4f] absolute end-0 -bottom-5">
+        <span className="text-sm text-[#fadb14] absolute end-0 -bottom-5">
           1
         </span>
       </div>

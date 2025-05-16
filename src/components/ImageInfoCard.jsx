@@ -1,4 +1,3 @@
-import React from "react";
 import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { formatFileSize } from "../../util/util";
@@ -66,7 +65,7 @@ const ImageInfoCard = ({ handleSingleDownload, handleDelete, ...props }) => {
           </span>
         </span>
         <button
-          onClick={() => handleSingleDownload(props?.content)}
+          onClick={handleSingleDownload}
           className="rounded-md bg-[#0ecd0f] hover:bg-[#0ecd0f]/80 text-white px-2  inline-flex items-center mt-2"
         >
           <svg
