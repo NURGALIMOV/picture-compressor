@@ -2,12 +2,12 @@ import React from "react";
 
 const QualitySlider = ({ value, handleRangeChange }) => {
   const intervals = [
-    { value: 0, color: "#ff4d4f", label: "Not Recommended" },
-    { value: 0.2, color: "#fadb14", label: "Modarate" },
-    { value: 0.4, color: "#fadb14", label: "Modarate" },
-    { value: 0.6, color: "#0fdd23", label: "Recommended" },
-    { value: 0.8, color: "#0fdd23", label: "Recommended" },
-    { value: 1, color: "#fadb14", label: "Modarate" },
+    { value: 0, color: "#ff4d4f", label: "not recommended" },
+    { value: 0.2, color: "#fadb14", label: "moderate" },
+    { value: 0.4, color: "#fadb14", label: "moderate" },
+    { value: 0.6, color: "#0fdd23", label: "recommended" },
+    { value: 0.8, color: "#0fdd23", label: "recommended" },
+    { value: 1, color: "#fadb14", label: "moderate" },
   ];
 
   const currentInterval = intervals.reduce((prev, curr) => {
