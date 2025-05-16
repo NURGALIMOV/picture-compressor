@@ -182,7 +182,7 @@ const MainContent = () => {
                 isDragActive ? "text-gray-700" : "text-gray-500"
               } `}
             >
-              <span className="font-semibold">Click to upload</span> or drag and
+              <span className="font-semibold">Click to upload,</span> or drag and
               drop multiple images.
             </p>
 
@@ -191,7 +191,7 @@ const MainContent = () => {
               <span className="text-gray-500">JPG, JPEG, PNG, WEBP.</span>
             </p>
             <p className="text-[#ff4d4f] text-sm">
-              **png formatted image need to be larger than 120kb
+              Note: PNG images must be larger than 120 KB.
             </p>
           </div>
 

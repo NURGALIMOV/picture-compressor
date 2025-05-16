@@ -25,5 +25,8 @@
       "resources": ["logo.svg", "logo.png", "logo180.png"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
 }
