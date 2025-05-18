@@ -17,9 +17,6 @@
   "permissions": [
     "storage"
   ],
-  "host_permissions": [
-    "*://*/*"
-  ],
   "web_accessible_resources": [
     {
       "resources": ["logo.svg", "logo.png", "logo180.png"],
