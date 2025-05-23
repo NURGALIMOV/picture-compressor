@@ -14,9 +14,6 @@
   "action": {
     "default_popup": "index.html"
   },
-  "permissions": [
-    "storage"
-  ],
   "web_accessible_resources": [
     {
       "resources": ["logo.svg", "logo.png", "logo180.png"],
