@@ -70,7 +70,7 @@ const MainContent = () => {
       img.file(`compressed_${file?.name}`, blob);
       counter = counter - 1;
       const progress = Math.floor(
-        ((files?.length - counter) / files?.length) * 100
+        ((files?.length - counter) / files?.length) * 100,
       );
       setCompressProgress(progress);
     }
@@ -139,10 +139,10 @@ const MainContent = () => {
 
   const handleDelete = (index) => {
     setCompressedImages((compressedImages) =>
-      compressedImages.filter((_, i) => i !== index)
+      compressedImages.filter((_, i) => i !== index),
     );
     setFilelist((filelist) =>
-      Array.from(filelist).filter((_, i) => i !== index)
+      Array.from(filelist).filter((_, i) => i !== index),
     );
   };
 
@@ -182,8 +182,8 @@ const MainContent = () => {
                 isDragActive ? "text-gray-700" : "text-gray-500"
               } `}
             >
-              <span className="font-semibold">Click to upload,</span> or drag and
-              drop multiple images.
+              <span className="font-semibold">Click to upload,</span> or drag
+              and drop multiple images.
             </p>
 
             <p>
