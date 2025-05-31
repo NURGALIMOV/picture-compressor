@@ -6,6 +6,7 @@ import ImageInfoCard from "./ImageInfoCard";
 import LoadingSpinner from "./LoadingSpinner";
 import ProgressBar from "./ProgressBar";
 import QualitySlider from "./QualitySlider";
+import RateUs from "./RateUs";
 
 const MainContent = () => {
   const [compressedImages, setCompressedImages] = useState([]);
@@ -286,6 +287,7 @@ const MainContent = () => {
             </PhotoProvider>
           </>
         )}
+        <RateUs />
       </div>
     </div>
   );
