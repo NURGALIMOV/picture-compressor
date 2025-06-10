@@ -9,7 +9,7 @@ const RateUs = () => {
     <>
       <hr className="border-0 border-t-4 border-[#bbb] opacity-25" />
       <div className="flex flex-row items-center justify-center">
-        <p className="text-center font-sans text-[16px] mr-3">Rate us:</p>
+        <p className="text-center font-sans text-[12px] mr-3">Rate us:</p>
         <input
           name="fst"
           value="5"
@@ -38,7 +38,7 @@ const Star = ({ href, value }) => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 576 512"
-            className="mx-[2px] my-[2px] h-[16px] w-[16px] fill-[#ff8400] transition-colors duration-300 group-hover:fill-[#ff8400] peer-checked:fill-[#ffc711] hover:fill-[#ffc711]"
+            className="mx-[2px] my-[2px] h-[12px] w-[12px] fill-[#ff8400] transition-colors duration-300 group-hover:fill-[#ff8400] peer-checked:fill-[#ffc711] hover:fill-[#ffc711]"
           >
             <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
           </svg>
