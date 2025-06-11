@@ -1,3 +1,4 @@
+chrome.runtime.setUninstallURL("https://uninstall.picture-compressor.com/");
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     chrome.tabs.create({
