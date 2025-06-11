@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-const FORMS_URL = "https://forms.gle/NACdyWuWjdZhRAY57";
+const FORMS_URL = "https://prettyform.addxt.com/a/form/vf/1FAIpQLScgz0qMU347Dz2LAYvbu2Dey-wnvMxEjHokdnEhLoeodc-vtg";
 const CWS_URL =
   "https://chromewebstore.google.com/detail/picture-compressor/nodbdfcbkkedigollfldkkjjfjkjnjpb/reviews";
 
